@@ -1,9 +1,14 @@
-const IndexPage = () => {
+import Head from "next/head";
+import Header from "../components/header/Header";
+
+export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen bg-background">
-      <h1 className="text-4xl font-normal text-green-500">Hello, Next.js with Tailwind and SCSS! And typscript too!!!</h1>
+    <div className='home flex flex-col items-center'>
+      <Head>
+        <title>From USA Deliwery</title>
+      </Head>
+      <Header />
+      <main className='flex flex-col'></main>
     </div>
   );
-};
-
-export default IndexPage;
+}
