@@ -1,8 +1,8 @@
 interface LogoProps {
-  className?: string;
+	className?: string;
 }
 
-const Logo: React.FC<LogoProps> = ({className=""}) => {
+const Logo: React.FC<LogoProps> = ({ className = "" }) => {
 	return (
 		<div className={`logo flex flex-row items-center ${className}`}>
 			<img

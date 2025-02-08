@@ -28,8 +28,10 @@ button,
 input,
 select,
 textarea {
-	background: none;
-	border: none;
+	background: white;
+  padding: 12px !important;
+	border: 2px #111827 solid;
+  border-radius: 4px;
 	font: inherit;
 	color: inherit;
 	outline: none;

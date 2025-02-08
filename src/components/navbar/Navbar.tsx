@@ -24,7 +24,7 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
 						<Link
 							className='navbar__link'
 							href='/'>
-							Culculator
+							Calculator
 						</Link>
 					</li>
 					<li className='navbar__item'>
