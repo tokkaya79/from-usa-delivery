@@ -13,15 +13,19 @@ const Calculator: React.FC = () => {
 		deliveryArea: "",
 	});
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  const { name, value, type } = e.target;
-  
-  setFormData((prev) => ({
-    ...prev,
-    [name]: type === "number" ? (value === "" ? "" : parseFloat(value) || "") : value,
-  }));
-};
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value, type } = e.target;
 
+		setFormData((prev) => ({
+			...prev,
+			[name]:
+				type === "number"
+					? value === ""
+						? ""
+						: parseFloat(value) || ""
+					: value,
+		}));
+	};
 
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
@@ -30,13 +34,17 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 	};
 
 	return (
-		<div className='calculator w-[756px] h-[584px] bg-[#F9FAFB] rounded-2xl text-center py-6 flex flex-col items-center'>
-			<h2 className='calculator__title font-bold text-3xl text-[#111827] mb-4'>Shipping calculator</h2>
+		<div className='calculator w-[50%] h-auto bg-[#F9FAFB] rounded-2xl text-center py-6 flex flex-col items-center'>
+			<h2 className='calculator__title font-bold text-3xl text-[#111827] mb-4'>
+				Shipping calculator
+			</h2>
 			<p className='calculator__description text-base text-[#111827] font-normal mb-7 w-[358px]'>
 				Calculate how much it will cost to transport your purchase from abroad
 			</p>
 
-			<form onSubmit={handleSubmit} className='calculator__form w-[496px] h-[408px] flex flex-wrap gap-6 justify-between'>
+			<form
+				onSubmit={handleSubmit}
+				className='calculator__form max-w-[496px] w-full h-full flex flex-wrap gap-6 justify-between'>
 				<input
 					type='text'
 					name='name'
@@ -52,7 +60,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					placeholder='Your email'
 					value={formData.email}
 					onChange={handleChange}
-					className='calculator__input'
+					className='calculator__input w-[47%]'
 					required
 				/>
 				<input
@@ -61,7 +69,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					placeholder='Your phone'
 					value={formData.phone}
 					onChange={handleChange}
-					className='calculator__input'
+					className='calculator__input calculator__input__small'
 					required
 				/>
 				<input
@@ -70,8 +78,8 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					placeholder='Weight, kg'
 					value={formData.weight || 0}
 					onChange={handleChange}
-					className='calculator__input'
-          min="0"
+					className='calculator__input calculator__input__small'
+					min='0'
 					required
 				/>
 				<input
@@ -80,8 +88,8 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					placeholder='Total area, m²'
 					value={formData.goodsArea || 0}
 					onChange={handleChange}
-					className='calculator__input'
-          min="0"
+					className='calculator__input calculator__input__small'
+					min='0'
 					required
 				/>
 				<input
@@ -89,7 +97,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					name='country'
 					placeholder='Country of purchase'
 					value={formData.country}
-					className='calculator__input'
+					className='calculator__input calculator__input__small'
 					required
 				/>
 				<input
@@ -97,7 +105,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					name='cityPur'
 					placeholder='City of purchase'
 					value={formData.city}
-					className='calculator__input'
+					className='calculator__input calculator__input__small'
 					required
 				/>
 				<input
@@ -105,7 +113,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					name='areaDel'
 					placeholder='Delivery area'
 					value={formData.deliveryArea}
-					className='calculator__input'
+					className='calculator__input calculator__input__small'
 					required
 				/>
 				<input
@@ -113,10 +121,14 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 					name='cityDel'
 					placeholder='Delivery city'
 					value={formData.city}
-					className='calculator__input'
+					className='calculator__input calculator__input__small'
 					required
 				/>
-				<button type="submit" className="calculator__button w-full bg-[#8B5CF6] hover:bg-[#8a5cf6d0] text-[#F9FAFB]">Order an estimate</button>
+				<button
+					type='submit'
+					className='calculator__button w-full bg-[#8B5CF6] hover:bg-[#8a5cf6d0] text-[#F9FAFB]'>
+					Order an estimate
+				</button>
 			</form>
 		</div>
 	);
