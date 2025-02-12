@@ -2,6 +2,7 @@ import Head from "next/head";
 import Header from "../components/header/Header";
 import Calculator from "src/components/calculator/Calculator";
 import AboutUs from "src/components/aboutUs/AboutUs";
+import Advantages from "src/components/advantages/Advantages";
 
 export default function Home() {
 	return (
@@ -15,6 +16,7 @@ export default function Home() {
 					<AboutUs />
 					<Calculator />
 				</div>
+        <Advantages/>
 			</main>
 		</div>
 	);
