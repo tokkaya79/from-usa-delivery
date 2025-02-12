@@ -10,7 +10,7 @@ export default function Home() {
 				<title>From USA Deliwery</title>
 			</Head>
 			<Header />
-			<main className='flex flex-col w-11/12'>
+			<main className='flex flex-col items-center w-11/12 pb-20'>
 				<div className='container flex justify-center gap-6 mb-20 w-full'>
 					<AboutUs />
 					<Calculator />

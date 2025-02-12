@@ -1,6 +1,6 @@
 const AboutUs = () => {
 	return (
-		<div className='about-us w-[50%]'>
+		<div className='about-us w-[50%] flex flex-col justify-between'>
 			<h2 className='about-us__title font-black text-4xl mb-3'>
 				Hassle-free delivery of purchased items from the USA, Europe and Asia to
 				Poland

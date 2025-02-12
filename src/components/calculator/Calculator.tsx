@@ -5,7 +5,8 @@ const Calculator: React.FC = () => {
 		name: "",
 		email: "",
 		phone: "",
-		city: "",
+		cityPur: "",
+		cityDel: "",
 		adress: "",
 		weight: "",
 		goodsArea: "",
@@ -18,12 +19,7 @@ const Calculator: React.FC = () => {
 
 		setFormData((prev) => ({
 			...prev,
-			[name]:
-				type === "number"
-					? value === ""
-						? ""
-						: parseFloat(value) || ""
-					: value,
+			[name]: type === "number" ? (value === "" ? "" : Number(value)) : value,
 		}));
 	};
 
@@ -31,6 +27,16 @@ const Calculator: React.FC = () => {
 		e.preventDefault();
 		console.log("date of form", formData);
 		alert("request sent!");
+		setFormData((prev) => ({
+			...prev,
+			cityPur: "",
+			cityDel: "",
+			adress: "",
+			weight: "",
+			goodsArea: "",
+			country: "",
+			deliveryArea: "",
+		}));
 	};
 
 	return (
@@ -97,6 +103,7 @@ const Calculator: React.FC = () => {
 					name='country'
 					placeholder='Country of purchase'
 					value={formData.country}
+					onChange={handleChange}
 					className='calculator__input calculator__input__small'
 					required
 				/>
@@ -104,15 +111,17 @@ const Calculator: React.FC = () => {
 					type='text'
 					name='cityPur'
 					placeholder='City of purchase'
-					value={formData.city}
+					value={formData.cityPur}
+					onChange={handleChange}
 					className='calculator__input calculator__input__small'
 					required
 				/>
 				<input
 					type='text'
-					name='areaDel'
+					name='deliveryArea'
 					placeholder='Delivery area'
 					value={formData.deliveryArea}
+					onChange={handleChange}
 					className='calculator__input calculator__input__small'
 					required
 				/>
@@ -120,7 +129,8 @@ const Calculator: React.FC = () => {
 					type='text'
 					name='cityDel'
 					placeholder='Delivery city'
-					value={formData.city}
+					value={formData.cityDel}
+					onChange={handleChange}
 					className='calculator__input calculator__input__small'
 					required
 				/>
