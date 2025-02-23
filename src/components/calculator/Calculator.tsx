@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "../button/Button";
 
 const Calculator: React.FC = () => {
 	const [formData, setFormData] = useState({
@@ -134,11 +135,7 @@ const Calculator: React.FC = () => {
 					className='calculator__input calculator__input__small'
 					required
 				/>
-				<button
-					type='submit'
-					className='calculator__button w-full bg-[#8B5CF6] hover:bg-[#8a5cf6d0] text-[#F9FAFB]'>
-					Order an estimate
-				</button>
+        <Button text="Order an estimate" className="w-full"/>
 			</form>
 		</div>
 	);

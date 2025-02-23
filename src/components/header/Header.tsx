@@ -1,6 +1,6 @@
 import Navbar from "../navbar/Navbar";
 import Logo from "../logo/Logo";
-import LeaveRequest from "../leaveRequest/LeaveRequest";
+import Button from "../button/Button";
 
 const Header: React.FC = () => {
 	return (
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
 			</div>
 			<div className="header__bottom flex justify-between  mt-6">
 				<Navbar/>
-				<LeaveRequest/>
+				<Button text="Leave a request" className="w-49"/>
 			</div>
 		</header>
 	);
