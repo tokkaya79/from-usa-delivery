@@ -3,6 +3,7 @@ import Header from "../components/header/Header";
 import Calculator from "src/components/calculator/Calculator";
 import AboutUs from "src/components/aboutUs/AboutUs";
 import Advantages from "src/components/advantages/Advantages";
+import Documents from "src/components/documents/Documents";
 
 export default function Home() {
 	return (
@@ -17,6 +18,7 @@ export default function Home() {
 					<Calculator />
 				</div>
         <Advantages/>
+        <Documents/>
 			</main>
 		</div>
 	);
