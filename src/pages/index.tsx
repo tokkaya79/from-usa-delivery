@@ -4,6 +4,7 @@ import Calculator from "src/components/calculator/Calculator";
 import AboutUs from "src/components/aboutUs/AboutUs";
 import Advantages from "src/components/advantages/Advantages";
 import Documents from "src/components/documents/Documents";
+import Reviews from "src/components/reviews/Reviews";
 
 export default function Home() {
 	return (
@@ -19,6 +20,7 @@ export default function Home() {
 				</div>
         <Advantages/>
         <Documents/>
+        <Reviews/>
 			</main>
 		</div>
 	);
